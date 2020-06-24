@@ -2,16 +2,19 @@
   Created high grade data pipelines for a music streaming company , that are dynamic and built from reusable tasks, that can be monitored, and allowed scheduled
   backfilling.The source data resides in S3 and needs to be processed in Sparkify's data warehouse in Amazon Redshift. The source datasets consist of JSON logs 
   that tell about user activity in the application and JSON metadata about the songs the users listen to.
-
-    1) Using Airflow to automate ETL pipelines using Airflow, Python, Amazon Redshift.
-    2) Transforming data from various sources into a star schema optimized for the analytics team's use cases.
-    3) Writing custom operators to perform tasks such as staging data, filling the data warehouse, and validation through data quality checks.
-    4) Setting up IAM Roles, Redshift Clusters, Airflow Connections.
     
-    The primary file in this repo is the etl.py, which generates the DAG with all necessary tasks to read in files from S3 buckets, 
-    load into staging tables and transform into a star schema which is stored in Redshift.
+    Skills Used: 
     
-# Operators
+    - Using Airflow to automate ETL pipelines using Airflow, Python, Amazon Redshift.
+    - Transforming data from various sources into a star schema optimized for the analytics team's use cases.
+    - Writing custom operators to perform tasks such as staging data, filling the data warehouse, and validation through data quality checks.
+    - Setting up IAM Roles, Redshift Clusters, Airflow Connections.
+   
+    
+# Operators   
+      The primary file in this repo is the etl.py, which generates the DAG with all necessary tasks to read in files from S3 buckets, 
+      load into staging tables and transform into a star schema which is stored in Redshift.
+      
       Staging Operator: Using Airflow's PostgreSQL & S3 hooks, data is read and copied to staging tables in redshift.
       It loads JSON formatted files from S3 to Amazon Redshift. The operator creates and runs a SQL COPY statement based on the parameters provided. 
   
